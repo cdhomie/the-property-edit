@@ -1,76 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Property Edit</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
   <style>
+    :root {
+      --ivory: #F7F5F2;
+      --sand: #E8E1D9;
+      --charcoal: #2B2B2B;
+      --sage: #A8B5A2;
+      --gold: #C6A77D;
+    }
+
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
-      background-color: #F7F5F2;
-      color: #2B2B2B;
+      background: var(--ivory);
+      color: var(--charcoal);
+      line-height: 1.6;
     }
 
     header {
-      padding: 60px 20px;
       text-align: center;
-      background-color: #F7F5F2;
+      padding: 100px 20px 60px;
+      max-width: 800px;
+      margin: auto;
     }
 
     h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 48px;
+      font-size: 52px;
       margin: 0;
     }
 
     .tagline {
-      margin-top: 10px;
-      font-size: 18px;
-      color: #A8B5A2;
+      margin-top: 15px;
+      color: var(--sage);
+    }
+
+    .cta {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 14px 28px;
+      background: var(--charcoal);
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
     }
 
     section {
-      padding: 60px 20px;
-      max-width: 1000px;
+      padding: 80px 20px;
+      max-width: 1100px;
       margin: auto;
     }
 
     .alt {
-      background-color: #E8E1D9;
+      background: var(--sand);
     }
 
     h2 {
       font-family: 'Playfair Display', serif;
-      margin-bottom: 20px;
+      font-size: 32px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 25px;
+    }
+
+    @media (min-width: 768px) {
+      .grid { grid-template-columns: 1fr 1fr 1fr; }
     }
 
     .card {
       background: white;
-      padding: 25px;
-      margin: 15px 0;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
     }
 
-    .accent {
-      color: #C6A77D;
+    .price {
+      margin-top: 10px;
+      font-weight: bold;
+      color: var(--gold);
+    }
+
+    form {
+      max-width: 600px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+    }
+
+    button {
+      background: var(--charcoal);
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
     }
 
     footer {
       text-align: center;
-      padding: 30px;
-      font-size: 14px;
-      background-color: #F7F5F2;
-    }
-
-    @media (min-width: 768px) {
-      .grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-      }
+      padding: 40px;
     }
   </style>
 </head>
@@ -78,28 +120,51 @@
 
   <header>
     <h1>The Property Edit</h1>
-    <p class="tagline">Elevated information, beautifully designed</p>
+    <p class="tagline">Professional welcome packs that reduce guest questions & improve reviews</p>
+    <a href="#contact" class="cta">Order Your Welcome Pack</a>
   </header>
 
   <section>
-    <h2>About</h2>
-    <p>
-      We transform everyday property and operational information into refined, beautifully presented documents that enhance clarity, experience, and perception.
-    </p>
+    <h2>What You Get</h2>
+    <p>We create beautifully designed welcome packs that answer guest questions before they ask — saving you time and improving your guest experience.</p>
   </section>
 
   <section class="alt">
-    <h2>Services</h2>
+    <h2>Services & Pricing</h2>
     <div class="grid">
       <div class="card">
-        <h3>Staff Handbooks</h3>
-        <p>Clear, structured, and beautifully designed internal documentation.</p>
+        <h3>Airbnb Welcome Pack</h3>
+        <p>Guest info, house rules, local tips. Fully branded to your property.</p>
+        <p class="price">From £45</p>
       </div>
       <div class="card">
-        <h3>Property Welcome Packs</h3>
-        <p>Elevated guest experiences through thoughtful and elegant guides.</p>
+        <h3>Staff Handbook</h3>
+        <p>Policies, onboarding and procedures in a clean, professional format.</p>
+        <p class="price">From £95</p>
+      </div>
+      <div class="card">
+        <h3>Custom Package</h3>
+        <p>Fully bespoke design and structure tailored to your business.</p>
+        <p class="price">From £150+</p>
       </div>
     </div>
+  </section>
+
+  <section>
+    <h2>Why It Matters</h2>
+    <p>Designed by someone in the property space, every pack is built from real guest questions — helping you reduce messages, save time, and create a better experience.</p>
+  </section>
+
+  <section class="alt" id="contact">
+    <h2>Order / Enquire</h2>
+    <p>Send your property details and we’ll get started within 48 hours.</p>
+
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Tell us about your property" required></textarea>
+      <button type="submit">Send Enquiry</button>
+    </form>
   </section>
 
   <footer>
