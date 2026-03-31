@@ -33,12 +33,13 @@
 
     h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 52px;
+      font-size: 48px;
       margin: 0;
     }
 
     .tagline {
       margin-top: 15px;
+      font-size: 20px;
       color: var(--sage);
     }
 
@@ -50,6 +51,7 @@
       color: white;
       text-decoration: none;
       border-radius: 6px;
+      font-weight: 500;
     }
 
     section {
@@ -65,6 +67,12 @@
     h2 {
       font-family: 'Playfair Display', serif;
       font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 17px;
+      margin-bottom: 15px;
     }
 
     .grid {
@@ -73,7 +81,7 @@
     }
 
     @media (min-width: 768px) {
-      .grid { grid-template-columns: 1fr 1fr 1fr; }
+      .grid { grid-template-columns: repeat(3, 1fr); }
     }
 
     .card {
@@ -81,24 +89,17 @@
       padding: 30px;
       border-radius: 10px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
     }
 
     .price {
       margin-top: 10px;
       font-weight: bold;
       color: var(--gold);
-    }
-
-    form {
-      max-width: 600px;
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 15px;
-      border: 1px solid #ddd;
-      border-radius: 6px;
     }
 
     button {
@@ -110,90 +111,133 @@
       cursor: pointer;
     }
 
+    img {
+      width: 100%;
+      border-radius: 6px;
+      margin-bottom: 15px;
+    }
+
     footer {
       text-align: center;
       padding: 40px;
+      font-size: 14px;
+      color: var(--charcoal);
+    }
+
+    a.cta:hover {
+      background: var(--gold);
+      color: var(--charcoal);
     }
   </style>
 </head>
 <body>
 
+  <!-- HERO SECTION -->
   <header>
-    <h1>The Property Edit</h1>
-    <p class="tagline">Professional welcome packs that reduce guest questions & improve reviews</p>
-    <a href="#contact" class="cta">Order Your Welcome Pack</a>
+    <h1>Professional Welcome Packs & Staff Handbooks for Airbnb Hosts</h1>
+    <p class="tagline">Designed to reduce guest questions, save you time, and improve your reviews.</p>
+    <a href="#packages" class="cta">Get Your Pack Designed</a>
   </header>
 
+  <!-- WHAT YOU OFFER -->
   <section>
-    <h2>What You Get</h2>
-    <p>We create beautifully designed welcome packs that answer guest questions before they ask — saving you time and improving your guest experience.</p>
+    <h2>Simple, Professional Documents for Your Property</h2>
+    <p>We create clean, beautifully designed welcome packs and staff handbooks tailored to your property — helping you deliver a seamless guest experience every time.</p>
+    <p>Whether you manage one property or multiple, we make your information clear, consistent, and professional.</p>
   </section>
 
+  <!-- PACKAGES -->
   <section id="packages" class="alt">
-  <h2>Packages & Pricing</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Welcome Pack (Digital PDF)</h3>
-      <p>Fully branded, guest info + house rules, delivered in 48 hours.</p>
-      <p class="price">From £45</p>
-      <a href="#contact" class="cta">Order Now</a>
+    <h2>Our Services</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Welcome Pack (Digital PDF)</h3>
+        <p>Perfect for Airbnb & holiday lets</p>
+        <ul>
+          <li>Guest information & house rules</li>
+          <li>Check-in / check-out instructions</li>
+          <li>Local recommendations</li>
+          <li>Fully branded to your property</li>
+        </ul>
+        <p class="price">From £45</p>
+        <a href="#contact" class="cta">Order Now</a>
+      </div>
+      <div class="card">
+        <h3>Staff Handbook</h3>
+        <p>Ideal for cleaners & teams</p>
+        <ul>
+          <li>Roles & responsibilities</li>
+          <li>Cleaning standards</li>
+          <li>Property procedures</li>
+          <li>Easy-to-follow layout</li>
+        </ul>
+        <p class="price">From £95</p>
+        <a href="#contact" class="cta">Order Now</a>
+      </div>
+      <div class="card">
+        <h3>Bundle Package (Best Value)</h3>
+        <p>Welcome pack + staff handbook</p>
+        <p class="price">From £120</p>
+        <a href="#contact" class="cta">Order Now</a>
+      </div>
     </div>
-    <div class="card">
-      <h3>Staff Handbook</h3>
-      <p>Clean, professional design, custom policies.</p>
-      <p class="price">From £95</p>
-      <a href="#contact" class="cta">Order Now</a>
-    </div>
-    <div class="card">
-      <h3>Bundle (Best Seller)</h3>
-      <p>Welcome pack + handbook</p>
-      <p class="price">£120–£150</p>
-      <a href="#contact" class="cta">Order Now</a>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section>
-  <h2>Example Work</h2>
-  <p>See a sample welcome pack designed to improve guest experience:</p>
-
-  <div class="grid">
-    <a href="https://canva.link/x9i8be9lgqy575x" target="_blank" class="card" style="text-decoration:none; color:inherit;">
-      <img src="https://via.placeholder.com/400x250" alt="Coastal Cottage Welcome Pack" style="width:100%; border-radius:6px; margin-bottom:15px;">
-      <h3>Coastal Cottage</h3>
-      <p>Clean, airy guide with local recommendations and house essentials.</p>
-      <p style="margin-top:10px; font-weight:bold; color:var(--gold);">View Sample</p>
-    </a>
-  </div>
-</section>
-  
+  <!-- EXAMPLES -->
   <section>
-    <h2>Why It Matters</h2>
-    <p>Designed by someone in the property space, every pack is built from real guest questions — helping you reduce messages, save time, and create a better experience.</p>
-  </section>
-
-  <section class="alt" id="contact">
-    <h2>Contact</h2>
-    <p>Enquire about a project or request a sample — we’d love to hear from you.</p>
-
-    <div class="card" style="max-width:600px;">
-      <p><strong>Email:</strong><br>
-      the.property.edit1@gmail.com</p>
-
-      <p><strong>WhatsApp:</strong><br>
-      +44 7538 092802</p>
-
-      <p><strong>Facebook:</strong><br>
-      https://www.facebook.com/share/18PRfuD6n8/?mibextid=wwXIfr</p>
-
-      <p style="margin-top:20px; color: var(--sage);">
-        We typically respond within 24–48 hours.
-      </p>
+    <h2>Example Designs</h2>
+    <p>Take a look at a sample welcome pack designed for modern holiday lets:</p>
+    <div class="grid">
+      <a href="https://canva.link/x9i8be9lgqy575x" target="_blank" class="card" style="text-decoration:none; color:inherit;">
+        <img src="https://via.placeholder.com/400x250" alt="Coastal Cottage Welcome Pack">
+        <h3>Coastal Cottage</h3>
+        <p>Clean, airy guide with local recommendations and house essentials.</p>
+        <p style="margin-top:10px; font-weight:bold; color:var(--gold);">View Sample</p>
+      </a>
     </div>
   </section>
 
+  <!-- WHY IT MATTERS -->
+  <section class="alt">
+    <h2>Why Every Property Needs This</h2>
+    <p>A well-designed welcome pack doesn’t just look good — it transforms your guest experience.</p>
+    <ul>
+      <li>Fewer repetitive guest questions</li>
+      <li>Smoother check-ins</li>
+      <li>Better reviews</li>
+      <li>More professional presentation</li>
+    </ul>
+    <p>Your guests get all the information they need — before they even ask.</p>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section>
+    <h2>How It Works</h2>
+    <ol>
+      <li><strong>Send Your Details:</strong> Tell us about your property and what you need included.</li>
+      <li><strong>We Design Your Pack:</strong> Clean, professional document tailored to your brand.</li>
+      <li><strong>Receive Your Final PDF:</strong> Ready to send to guests or staff immediately.</li>
+    </ol>
+  </section>
+
+  <!-- TRUST / ABOUT YOU -->
+  <section class="alt">
+    <h2>Designed by a Property Host</h2>
+    <p>The Property Edit was created by someone working within the property and short-term rental space.</p>
+    <p>We understand the day-to-day challenges of hosting — from guest communication to maintaining standards — and design documents that actually make your life easier.</p>
+  </section>
+
+  <!-- CALL TO ACTION -->
+  <section id="contact">
+    <h2>Ready to Upgrade Your Guest Experience?</h2>
+    <p>Get a professionally designed welcome pack or staff handbook tailored to your property.</p>
+    <a href="https://wa.me/447XXXXXXX" class="cta">Message Us on WhatsApp</a>
+    <a href="mailto:yourname@email.com" class="cta" style="margin-left:10px;">Email Us</a>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
-    © 2026 The Property Edit
+    © 2026 The Property Edit — Professional documents for modern holiday lets
   </footer>
 
 </body>
