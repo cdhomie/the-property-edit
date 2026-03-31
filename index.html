@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Property Edit</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
@@ -16,6 +16,10 @@
       --gold: #C6A77D;
     }
 
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
@@ -24,34 +28,45 @@
       line-height: 1.6;
     }
 
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
     header {
       text-align: center;
       padding: 100px 20px 60px;
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
     }
 
     h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 48px;
+      font-size: 3rem;
       margin: 0;
+      line-height: 1.2;
     }
 
     .tagline {
       margin-top: 15px;
-      font-size: 20px;
+      font-size: 1.2rem;
       color: var(--sage);
     }
 
     .cta {
       display: inline-block;
       margin-top: 25px;
-      padding: 14px 28px;
+      padding: 14px 30px;
       background: var(--charcoal);
       color: white;
-      text-decoration: none;
       border-radius: 6px;
       font-weight: 500;
+      transition: background 0.2s;
+    }
+
+    .cta:hover {
+      background: var(--gold);
+      color: var(--charcoal);
     }
 
     section {
@@ -66,22 +81,23 @@
 
     h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 32px;
+      font-size: 2rem;
       margin-bottom: 20px;
     }
 
-    p {
-      font-size: 17px;
+    p, li {
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+
+    ul, ol {
+      margin-left: 20px;
       margin-bottom: 15px;
     }
 
     .grid {
       display: grid;
       gap: 25px;
-    }
-
-    @media (min-width: 768px) {
-      .grid { grid-template-columns: repeat(3, 1fr); }
     }
 
     .card {
@@ -100,39 +116,51 @@
       margin-top: 10px;
       font-weight: bold;
       color: var(--gold);
-    }
-
-    button {
-      background: var(--charcoal);
-      color: white;
-      padding: 12px 25px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
+      font-size: 1.1rem;
     }
 
     img {
       width: 100%;
+      height: auto;
       border-radius: 6px;
       margin-bottom: 15px;
     }
 
     footer {
       text-align: center;
-      padding: 40px;
-      font-size: 14px;
+      padding: 40px 20px;
+      font-size: 0.9rem;
       color: var(--charcoal);
     }
 
-    a.cta:hover {
-      background: var(--gold);
-      color: var(--charcoal);
+    /* DESKTOP / LARGE SCREENS */
+    @media (min-width: 1024px) {
+      .grid-3 { grid-template-columns: repeat(3, 1fr); }
+      .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* TABLETS */
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .grid-3, .grid-2 { grid-template-columns: repeat(2, 1fr); }
+      section { padding: 60px 15px; }
+    }
+
+    /* MOBILE */
+    @media (max-width: 767px) {
+      header { padding: 60px 15px 40px; }
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.6rem; }
+      p, li { font-size: 0.95rem; }
+      .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      section { padding: 40px 15px; }
+      .cta { display: block; width: 100%; text-align: center; padding: 14px 0; margin-top: 15px; }
+      .card { padding: 20px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- HERO SECTION -->
+  <!-- HERO -->
   <header>
     <h1>Professional Welcome Packs & Staff Handbooks for Airbnb Hosts</h1>
     <p class="tagline">Designed to reduce guest questions, save you time, and improve your reviews.</p>
@@ -149,7 +177,7 @@
   <!-- PACKAGES -->
   <section id="packages" class="alt">
     <h2>Our Services</h2>
-    <div class="grid">
+    <div class="grid grid-3">
       <div class="card">
         <h3>Welcome Pack (Digital PDF)</h3>
         <p>Perfect for Airbnb & holiday lets</p>
@@ -187,8 +215,8 @@
   <section>
     <h2>Example Designs</h2>
     <p>Take a look at a sample welcome pack designed for modern holiday lets:</p>
-    <div class="grid">
-      <a href="https://canva.link/x9i8be9lgqy575x" target="_blank" class="card" style="text-decoration:none; color:inherit;">
+    <div class="grid grid-3">
+      <a href="https://canva.link/x9i8be9lgqy575x" target="_blank" class="card">
         <img src="https://via.placeholder.com/400x250" alt="Coastal Cottage Welcome Pack">
         <h3>Coastal Cottage</h3>
         <p>Clean, airy guide with local recommendations and house essentials.</p>
@@ -220,7 +248,7 @@
     </ol>
   </section>
 
-  <!-- TRUST / ABOUT YOU -->
+  <!-- ABOUT / TRUST -->
   <section class="alt">
     <h2>Designed by a Property Host</h2>
     <p>The Property Edit was created by someone working within the property and short-term rental space.</p>
@@ -231,9 +259,8 @@
   <section id="contact">
     <h2>Ready to Upgrade Your Guest Experience?</h2>
     <p>Get a professionally designed welcome pack or staff handbook tailored to your property.</p>
-    <a href="https://wa.me/447538092802" class="cta">Message Us on WhatsApp</a>
-    <a href="mailto:the.property.edit1@gmail.com" class="cta" style="margin-left:10px;">Email Us</a>
-    <a href="https://www.facebook.com/share/18PRfuD6n8/?mibextid=wwXIfr" class="cta" style="margin-left:10px;">Facebook</a>
+    <a href="https://wa.me/447XXXXXXX" class="cta">Message Us on WhatsApp</a>
+    <a href="mailto:yourname@email.com" class="cta" style="margin-top:10px;">Email Us</a>
   </section>
 
   <!-- FOOTER -->
