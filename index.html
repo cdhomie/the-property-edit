@@ -75,20 +75,25 @@
       margin-bottom: 15px;
     }
 
-    .cta {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 25px;
-      background: var(--charcoal);
-      color: white;
-      border-radius: 6px;
-      transition: 0.2s;
-      cursor: pointer;
-    }
+   .cta {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: var(--charcoal);
+  color: white;              /* 🔥 THIS FIXES IT */
+  border-radius: 6px;
+  transition: 0.2s;
+  cursor: pointer;
+}
 
-    .cta:hover {
-      background: var(--gold);
-      color: var(--charcoal);
+.cta:visited {
+  color: white;              /* stops purple/visited weirdness */
+}
+
+.cta:hover {
+  background: var(--gold);
+  color: var(--charcoal);
+}
     }
 
     .alt {
