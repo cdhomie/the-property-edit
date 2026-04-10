@@ -1,223 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Property Edit</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Property Edit</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
-<style>
-:root {
-  --bg: #F6F7F5;
-  --section: #E3E8E1;
-  --text: #2F3E34;
-  --accent: #8FAF9A;
-  --cta: #2F3E34;
-  --tagline: #6B7D73;
-}
+  <style>
+    :root {
+      --ivory: #F7F5F2;
+      --sand: #E8E1D9;
+      --charcoal: #2B2B2B;
+      --sage: #A8B5A2;
+      --gold: #C6A77D;
+    }
 
-body {
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  text-align: center;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: var(--ivory);
+      color: var(--charcoal);
+      line-height: 1.6;
+    }
 
-a:visited {
-  color: inherit;
-}
+    /* REMOVE LINK STYLING */
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-header, section {
-  max-width: 1100px;
-  margin: auto;
-  padding: 80px 20px;
-}
+    a:visited {
+      color: inherit;
+    }
 
-h1, h2 {
-  font-family: 'Playfair Display', serif;
-}
+    header, section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 20px;
+      text-align: center;
+    }
 
-.tagline {
-  color: var(--tagline);
-}
+    header {
+      padding-top: 100px;
+    }
 
-/* BUTTONS */
-.cta {
+    .section-intro {
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .tagline {
+      color: var(--sage);
+      font-size: 1.2rem;
+    }
+
+    p {
+      margin-bottom: 15px;
+    }
+
+   .cta {
   display: inline-block;
-  padding: 12px 24px;
-  min-width: 140px;
-  text-align: center;
-  background: var(--cta);
-  color: #fff;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: var(--charcoal);
+  color: white;              /* 🔥 THIS FIXES IT */
   border-radius: 6px;
-  font-weight: 500;
-  transition: all 0.2s ease;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.cta:visited {
+  color: white;              /* stops purple/visited weirdness */
 }
 
 .cta:hover {
-  background: var(--accent);
-  transform: translateY(-2px);
+  background: var(--gold);
+  color: var(--charcoal);
 }
+    }
 
-/* SECTIONS */
-.alt {
-  background: var(--section);
-  border-radius: 12px;
-}
+    .alt {
+      background: var(--sand);
+      border-radius: 12px;
+    }
 
-/* GRID */
-.grid {
-  display: grid;
-  gap: 40px;
-  margin-top: 40px;
-}
+    .grid {
+      display: grid;
+      gap: 40px;
+      margin-top: 40px;
+      align-items: start;
+    }
 
-.grid-3 {
-  grid-template-columns: repeat(3, 1fr);
-}
+    .grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+      justify-items: center;
+    }
 
-.grid-2 {
-  grid-template-columns: repeat(2, 1fr);
-}
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
 
-/* CARDS */
-.card {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-}
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      max-width: 300px;
+      width: 100%;
+    }
 
-/* IMAGE FIX (KEY PART) */
-.card img {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-  border-radius: 8px;
-  display: block;
-  margin: 0 auto 15px;
-}
+    .card:hover {
+      transform: translateY(-5px);
+    }
 
-/* PRICING */
-.price {
-  color: var(--accent);
-  font-weight: bold;
-}
+    .card img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 15px;
+    }
 
-/* CONTACT BUTTON STACK */
-#contact .cta {
-  display: block;
-  width: 220px;
-  margin: 10px auto;
-}
+    .price {
+      margin-top: 10px;
+      font-weight: bold;
+      color: var(--gold);
+    }
 
-/* MOBILE */
-@media (max-width: 900px) {
-  .grid-3,
-  .grid-2 {
-    grid-template-columns: 1fr;
-  }
-}
-</style>
+    .narrow {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .testimonial-box {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
+    }
+
+    .split {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(0,0,0,0.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.9rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .grid-2, .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      h1 { font-size: 2.2rem; }
+      h2 { font-size: 1.6rem; }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<header>
-  <h1>Professional Welcome Packs & Staff Handbooks</h1>
-  <p class="tagline">Save hours answering guest questions and run your property like a pro.</p>
-  <a href="#contact" class="cta">Get Your Pack</a>
-</header>
+  <!-- HERO -->
+  <header>
+    <h1>Professional Welcome Packs & Staff Handbooks</h1>
+    <p class="tagline">Save hours answering guest questions and run your property like a pro.</p>
+    <a href="#contact" class="cta">Get Your Pack</a>
+  </header>
 
-<!-- INTRO -->
-<section>
-  <h2>Simple, Professional Documents for Your Property</h2>
-  <p>We create clean, beautifully designed welcome packs and staff handbooks tailored to your property.</p>
-  <p>Clear, consistent, and professional — so your guests always know what to expect.</p>
-</section>
-
-<!-- TESTIMONIAL -->
-<section>
-  <h2>What Hosts Say</h2>
-
-  <p>"This service saved me hours answering guest and staff questions. My documents look so professional now."</p>
-  <p><strong>— Airbnb Host, Mundesley</strong></p>
-
-  <p>
-    ✔ Guaranteed contact within 48 hours<br>
-    ✔ One-time payment<br>
-    ✔ Simple, stress-free process
-  </p>
-</section>
-
-<!-- SERVICES -->
-<section class="alt">
-  <h2>Our Services</h2>
-
-  <div class="grid grid-3">
-    <div class="card">
-      <h3>Welcome Pack</h3>
-      <p>Guest info, house rules, and local recommendations.</p>
-      <p class="price">From £45</p>
-      <a href="#contact" class="cta">Order</a>
+  <!-- INTRO -->
+  <section>
+    <div class="section-intro">
+      <h2>Simple, Professional Documents for Your Property</h2>
+      <p>We create clean, beautifully designed welcome packs and staff handbooks tailored to your property.</p>
+      <p>Clear, consistent, and professional — so your guests always know what to expect.</p>
     </div>
+  </section>
 
-    <div class="card">
-      <h3>Staff Handbook</h3>
-      <p>Clear procedures and cleaning standards.</p>
-      <p class="price">From £95</p>
-      <a href="#contact" class="cta">Order</a>
+  <!-- TESTIMONIAL -->
+  <section>
+    <div class="narrow">
+      <h2>What Hosts Say</h2>
+
+      <div class="testimonial-box">
+        <p>"This service saved me hours answering guest and staff questions. My documents look so professional now."</p>
+        <p><strong>— Airbnb Host, Mundesley</strong></p>
+      </div>
+
+      <div class="split">
+        <p>
+          ✔ Guaranteed contact within 48 hours<br>
+          ✔ One-time payment<br>
+          ✔ Simple, stress-free process
+        </p>
+      </div>
     </div>
+  </section>
 
-    <div class="card">
-      <h3>Bundle Package</h3>
-      <p>Welcome pack + handbook together.</p>
-      <p class="price">From £120</p>
-      <a href="#contact" class="cta">Order</a>
+  <!-- SERVICES -->
+  <section class="alt">
+    <h2>Our Services</h2>
+
+    <div class="grid grid-3">
+      <div class="card">
+        <h3>Welcome Pack</h3>
+        <p>Guest info, house rules, and local recommendations.</p>
+        <p class="price">From £45</p>
+        <a href="#contact" class="cta">Order</a>
+      </div>
+
+      <div class="card">
+        <h3>Staff Handbook</h3>
+        <p>Clear procedures and cleaning standards.</p>
+        <p class="price">From £95</p>
+        <a href="#contact" class="cta">Order</a>
+      </div>
+
+      <div class="card">
+        <h3>Bundle Package</h3>
+        <p>Welcome pack + handbook together.</p>
+        <p class="price">From £120</p>
+        <a href="#contact" class="cta">Order</a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- EXAMPLES -->
-<section>
-  <h2>Example Designs</h2>
+  <!-- EXAMPLES -->
+  <section>
+    <h2>Example Designs</h2>
 
-  <div class="grid grid-2">
-    <a href="the property edit example work-compressed.pdf" target="_blank" class="card">
-      <img src="preview1.png" alt="Welcome pack preview">
-      <p>Clean welcome pack with local recommendations.</p>
-      <p style="font-weight:bold;">View PDF</p>
-    </a>
+    <div class="grid grid-2">
+      <a href="the property edit example work-compressed.pdf" target="_blank" class="card">
+        <img src="preview1.png" alt="Welcome pack preview">
+        <p>Clean welcome pack with local recommendations.</p>
+        <p style="font-weight:bold; color:var(--gold);">View PDF</p>
+      </a>
 
-    <a href="staff handbook.pdf" target="_blank" class="card">
-      <img src="preview2.png" alt="Staff handbook preview">
-      <p>Clear, simple staff handbook.</p>
-      <p style="font-weight:bold;">View PDF</p>
-    </a>
-  </div>
-</section>
+      <a href="staff handbook.pdf" target="_blank" class="card">
+        <img src="preview2.png" alt="Staff handbook preview">
+        <p>Clear, simple staff handbook.</p>
+        <p style="font-weight:bold; color:var(--gold);">View PDF</p>
+      </a>
+    </div>
+  </section>
 
-<!-- CONTACT -->
-<section id="contact" class="alt">
-  <h2>Ready to Upgrade Your Property?</h2>
-  <p>Get your professionally designed pack today.</p>
+  <!-- CTA -->
+  <section id="contact" class="alt">
+    <h2>Ready to Upgrade Your Property?</h2>
+    <p>Get your professionally designed pack today.</p>
 
-  <a href="https://wa.me/447538092802" class="cta">WhatsApp (text preferred)</a>
-  <a href="mailto:the.property.edit1@gmail.com" class="cta">Email</a>
-  <a href="https://www.facebook.com/share/1ApGqrAWFm/?mibextid=wwXIfr/" class="cta">Facebook</a>
-  <a href="https://www.instagram.com/the.property.edit1" class="cta">Instagram</a>
-</section>
+    <a href="https://wa.me/447538092802" class="cta">WhatsApp (text message preffered)</a><br><br>
+    <a href="mailto:the.property.edit1@gmail.com" class="cta">Email</a><br><br>
+    <a href="https://www.facebook.com/share/1ApGqrAWFm/?mibextid=wwXIfr/" class="cta">Facebook</a><br><br>
+    <a href="https://www.instagram.com/the.property.edit1?igsh=MXZweWZ5dWppazZvbw==&utm_source=qr" class="cta">Instagram</a>
+  </section>
 
-<footer>
-  © 2026 The Property Edit
-</footer>
+  <footer>
+    © 2026 The Property Edit
+  </footer>
 
 </body>
 </html>
