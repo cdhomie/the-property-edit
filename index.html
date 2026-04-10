@@ -16,145 +16,37 @@
   --cta: #1F2933;
   --tagline: #4B5563;
 }
+<style>
+:root {
+  --bg: #FAFAFA;
+  --section: #F0F2F5;
+  --text: #1F2933;
+  --accent: #3A7CA5;
+  --cta: #1F2933;
+  --tagline: #4B5563;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ALL your other CSS stays here */
+
+@media (max-width: 900px) {
+  .grid-2, .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.6rem; }
+}
 </style>
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    a { text-decoration: none; color: inherit; }
-
-    header, section {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 80px 20px;
-      text-align: center;
-    }
-
-    header { padding-top: 100px; }
-
-    .section-intro {
-      max-width: 700px;
-      margin: 0 auto 40px;
-    }
-
-    h1, h2 {
-      font-family: 'Playfair Display', serif;
-    }
-
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
-
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 15px;
-    }
-
-    /* 🔥 FIXED TAGLINE */
-    .tagline {
-      color: var(--tagline);
-      font-size: 1.2rem;
-      font-weight: 400;
-    }
-
-    .cta {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 25px;
-      background: var(--cta);
-      color: white;
-      border-radius: 6px;
-      transition: 0.2s;
-    }
-
-    .cta:hover {
-      background: var(--accent);
-      color: white;
-    }
-
-    .alt {
-      background: var(--section);
-      border-radius: 12px;
-    }
-
-    .grid {
-      display: grid;
-      gap: 40px;
-      margin-top: 40px;
-    }
-
-    .grid-2 {
-      grid-template-columns: repeat(2, 1fr);
-      justify-items: center;
-    }
-
-    .grid-3 {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      text-align: left;
-      max-width: 300px;
-      width: 100%;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-      border: 1px solid rgba(0,0,0,0.05);
-      transition: 0.2s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .price {
-      margin-top: 10px;
-      font-weight: bold;
-      color: var(--accent);
-    }
-
-    .narrow {
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .testimonial-box {
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-      margin-bottom: 30px;
-    }
-
-    .split {
-      margin-top: 30px;
-      padding-top: 20px;
-      border-top: 1px solid rgba(0,0,0,0.1);
-    }
-
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 900px) {
-      .grid-2, .grid-3 {
-        grid-template-columns: 1fr;
-      }
-
-      h1 { font-size: 2.2rem; }
-      h2 { font-size: 1.6rem; }
-    }
-  </style>
 </head>
 
 <body>
