@@ -9,11 +9,12 @@
 
   <style>
     :root {
-      --ivory: #F7F5F2;
-      --sand: #E8E1D9;
-      --charcoal: #2B2B2B;
-      --sage: #A8B5A2;
-      --gold: #C6A77D;
+      /* NEW COLOUR SCHEME: modern luxury blue + soft neutrals */
+      --cream: #FAF9F7;
+      --light-grey: #E4E7EB;
+      --deep-blue: #1F3A5F;
+      --steel-blue: #4A6FA5;
+      --accent: #D9A441;
     }
 
     * {
@@ -23,12 +24,11 @@
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
-      background: var(--ivory);
-      color: var(--charcoal);
+      background: var(--cream);
+      color: var(--deep-blue);
       line-height: 1.6;
     }
 
-    /* REMOVE LINK STYLING */
     a {
       text-decoration: none;
       color: inherit;
@@ -67,7 +67,7 @@
     }
 
     .tagline {
-      color: var(--sage);
+      color: var(--steel-blue);
       font-size: 1.2rem;
     }
 
@@ -75,29 +75,28 @@
       margin-bottom: 15px;
     }
 
-   .cta {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 25px;
-  background: var(--charcoal);
-  color: white;              /* 🔥 THIS FIXES IT */
-  border-radius: 6px;
-  transition: 0.2s;
-  cursor: pointer;
-}
+    .cta {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: var(--deep-blue);
+      color: white;
+      border-radius: 6px;
+      transition: 0.2s;
+      cursor: pointer;
+    }
 
-.cta:visited {
-  color: white;              /* stops purple/visited weirdness */
-}
+    .cta:visited {
+      color: white;
+    }
 
-.cta:hover {
-  background: var(--gold);
-  color: var(--charcoal);
-}
+    .cta:hover {
+      background: var(--accent);
+      color: var(--deep-blue);
     }
 
     .alt {
-      background: var(--sand);
+      background: var(--light-grey);
       border-radius: 12px;
     }
 
@@ -144,7 +143,7 @@
     .price {
       margin-top: 10px;
       font-weight: bold;
-      color: var(--gold);
+      color: var(--accent);
     }
 
     .narrow {
@@ -172,7 +171,6 @@
       font-size: 0.9rem;
     }
 
-    /* RESPONSIVE */
     @media (max-width: 900px) {
       .grid-2, .grid-3 {
         grid-template-columns: 1fr;
@@ -186,14 +184,12 @@
 
 <body>
 
-  <!-- HERO -->
   <header>
     <h1>Professional Welcome Packs & Staff Handbooks</h1>
     <p class="tagline">Save hours answering guest questions and run your property like a pro.</p>
     <a href="#contact" class="cta">Get Your Pack</a>
   </header>
 
-  <!-- INTRO -->
   <section>
     <div class="section-intro">
       <h2>Simple, Professional Documents for Your Property</h2>
@@ -202,7 +198,6 @@
     </div>
   </section>
 
-  <!-- TESTIMONIAL -->
   <section>
     <div class="narrow">
       <h2>What Hosts Say</h2>
@@ -222,7 +217,6 @@
     </div>
   </section>
 
-  <!-- SERVICES -->
   <section class="alt">
     <h2>Our Services</h2>
 
@@ -250,34 +244,12 @@
     </div>
   </section>
 
-  <!-- EXAMPLES -->
-  <section>
-    <h2>Example Designs</h2>
-
-    <div class="grid grid-2">
-      <a href="the property edit example work-compressed.pdf" target="_blank" class="card">
-        <img src="preview1.png" alt="Welcome pack preview">
-        <p>Clean welcome pack with local recommendations.</p>
-        <p style="font-weight:bold; color:var(--gold);">View PDF</p>
-      </a>
-
-      <a href="staff handbook.pdf" target="_blank" class="card">
-        <img src="preview2.png" alt="Staff handbook preview">
-        <p>Clear, simple staff handbook.</p>
-        <p style="font-weight:bold; color:var(--gold);">View PDF</p>
-      </a>
-    </div>
-  </section>
-
-  <!-- CTA -->
   <section id="contact" class="alt">
     <h2>Ready to Upgrade Your Property?</h2>
     <p>Get your professionally designed pack today.</p>
 
-    <a href="https://wa.me/447538092802" class="cta">WhatsApp (text message preffered)</a><br><br>
-    <a href="mailto:the.property.edit1@gmail.com" class="cta">Email</a><br><br>
-    <a href="https://www.facebook.com/share/1ApGqrAWFm/?mibextid=wwXIfr/" class="cta">Facebook</a><br><br>
-    <a href="https://www.instagram.com/the.property.edit1?igsh=MXZweWZ5dWppazZvbw==&utm_source=qr" class="cta">Instagram</a>
+    <a href="https://wa.me/447538092802" class="cta">WhatsApp</a><br><br>
+    <a href="mailto:the.property.edit1@gmail.com" class="cta">Email</a>
   </section>
 
   <footer>
